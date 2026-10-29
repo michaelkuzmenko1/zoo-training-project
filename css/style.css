@@ -1,0 +1,594 @@
+html {
+  scroll-behavior: smooth;
+}
+
+section,
+footer {
+  scroll-margin-top: 100px;
+}
+
+:root {
+  /* палитра */
+  --sand: #E6CFA3;
+  --green: #8CC084;
+  --ice: #BFE3F2;
+  --sand-dark: #B5652B;
+  --green-dark: #2F6B2C;
+  --ice-dark: #3F7FA6;
+
+  --sand-light: #F3E6CC;
+  --green-light: #D3E8CF;
+  --ice-light: #E6F4FA;
+
+  --ink: #1E1E1E;
+  --navy: #14304D;
+  --cream: #F5F3EE;
+  --soil: #7A5535;
+  --soil-dark: #56391F;
+
+  /* шрифты */
+  --font: "Inter", Arial, sans-serif;
+
+  --container: 1280px;
+}
+
+/* ---------- сброс ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------- фон-небо ---------- */
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--soil);
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #5E9BD6 0%,
+    #86BCE8 22%,
+    #BFE3F2 48%,
+    #E4F1F1 70%,
+    #F6EBCB 86%,
+    #EBD3A2 100%
+  );
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* общий стиль для мест под векторы и картинки — потом убрать */
+.vector,
+[data-image] {
+  outline: 2px dashed rgba(30, 30, 30, 0.25);
+  outline-offset: -2px;
+}
+
+/* =========================================================
+   ШАПКА
+   ========================================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.12);       /* почти прозрачный */
+  backdrop-filter: blur(14px) saturate(140%);  /* размывает и чуть усиливает цвет под шапкой */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo__icon {
+  width: 52px;
+  height: 52px;
+}
+
+.logo__text {
+  font-size: 28px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav__link {
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.nav__link:hover {
+  opacity: 0.6;
+}
+
+.button {
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   ПРИВЕТСТВИЕ
+   ========================================================= */
+.hero {
+  padding: 220px 0 110px;
+  text-align: center;
+}
+
+.hero__over {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.hero__title {
+  margin: 24px 0;
+  font-weight: 700;
+  font-size: 96px;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero__subtitle {
+  font-size: 24px;
+  color: var(--navy);
+}
+
+/* =========================================================
+   БИОМЫ
+   ========================================================= */
+.biomes {
+  padding-bottom: 140px;
+}
+
+.biomes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.biome-card {
+  display: block;
+}
+
+.biome-card__window {
+  position: relative;
+  height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.biome-card:hover .biome-card__window {
+  transform: translateY(-8px);
+}
+
+.biome-card__window--safari { background: var(--sand); }
+.biome-card__window--jungle { background: var(--green); }
+.biome-card__window--winter { background: var(--ice); }
+
+.biome-card__image {
+  position: absolute;
+  inset: 0;
+}
+
+.biome-card__name {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  font-weight: 700;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.biome-card__animals {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   О ЗООПАРКЕ
+   ========================================================= */
+.about {
+  padding: 60px 0 140px;
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  gap: 60px;
+  align-items: center;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.section-title--center {
+  text-align: center;
+}
+
+.tricolor {
+  display: flex;
+  margin: 18px 0 30px;
+}
+
+.tricolor__part {
+  width: 120px;
+  height: 6px;
+}
+
+.tricolor__part--safari { background: var(--sand-dark); }
+.tricolor__part--jungle { background: var(--green-dark); }
+.tricolor__part--winter { background: var(--ice-dark); }
+
+.about__paragraph {
+  max-width: 600px;
+  margin-bottom: 18px;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.legend {
+  display: flex;
+  gap: 36px;
+  margin: 30px 0;
+}
+
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.legend__dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid;
+}
+
+.legend__dot--safari { background: var(--sand);  border-color: var(--sand-dark); }
+.legend__dot--jungle { background: var(--green); border-color: var(--green-dark); }
+.legend__dot--winter { background: var(--ice);   border-color: var(--ice-dark); }
+
+.collage {
+  display: flex;
+  gap: 20px;
+}
+
+.collage__item {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  border: 5px solid;
+}
+
+.collage__item--safari { background: var(--sand-light);  border-color: var(--sand-dark); }
+.collage__item--jungle { background: var(--green-light); border-color: var(--green-dark); }
+.collage__item--winter { background: var(--ice-light);   border-color: var(--ice-dark); }
+
+/* тройная рамка: внешняя — песок, средняя — зелень, внутренний пунктир — лёд */
+.map-frame,
+.panorama {
+  padding: 10px;
+  border: 8px solid var(--sand-dark);
+  border-radius: 36px;
+}
+
+.map-frame__inner,
+.panorama__inner {
+  padding: 6px;
+  border: 4px solid var(--green-dark);
+  border-radius: 28px;
+}
+
+.map-frame__map,
+.panorama__image {
+  border: 2px dashed var(--ice-dark);
+  border-radius: 22px;
+  background: #FBF8F2;
+}
+
+.map-frame__map {
+  aspect-ratio: 1 / 1;
+}
+
+/* =========================================================
+   МАГАЗИН
+   ========================================================= */
+.shop {
+  padding-bottom: 200px;
+  text-align: center;
+}
+
+.shop__subtitle {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #6B6B6B;
+}
+
+.shop__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  justify-content: center;
+  gap: 70px;
+  margin-top: 56px;
+}
+
+.product__tile {
+  position: relative;
+  height: 340px;
+  padding: 10px;
+  border: 6px solid;
+  border-radius: 34px;
+  transition: transform 0.3s;
+}
+
+.product:hover .product__tile {
+  transform: translateY(-8px);
+}
+
+.product__tile--safari { border-color: var(--sand-dark);  background: var(--sand-light); }
+.product__tile--jungle { border-color: var(--green-dark); background: var(--green-light); }
+.product__tile--winter { border-color: var(--ice-dark);   background: var(--ice-light); }
+
+.product__image {
+  height: 100%;
+  border-radius: 24px;
+}
+
+.product__name {
+  margin-top: 22px;
+  font-size: 28px;
+}
+
+.product__desc {
+  margin-top: 6px;
+  font-size: 17px;
+  color: #6B6B6B;
+}
+
+/* =========================================================
+   ЛИНИЯ ЗЕМЛИ — деревья, животные, трава
+   ========================================================= */
+.ground-line {
+  position: relative;
+  height: 200px;
+}
+
+.grass {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+}
+
+.tree,
+.animal {
+  position: absolute;
+  bottom: 40px;
+}
+
+.tree--1 { left: 1%;   width: 90px;  height: 150px; }
+.tree--2 { left: 7%;   width: 110px; height: 130px; }
+.tree--3 { left: 15%;  width: 80px;  height: 160px; }
+.tree--4 { left: 62%;  width: 100px; height: 140px; }
+.tree--5 { right: 0;   width: 100px; height: 240px; }
+
+.animal--lion    { left: 33%; width: 60px; height: 50px; }
+.animal--tiger   { left: 37%; width: 55px; height: 40px; }
+.animal--giraffe { left: 58%; width: 70px; height: 120px; }
+
+/* =========================================================
+   ПТИЦЫ
+   ========================================================= */
+.bird {
+  position: absolute;
+  z-index: 2;
+  width: 26px;
+  height: 26px;
+}
+
+/* в небе */
+.bird--sky-1 { top: 150px;  left: 9%; }
+.bird--sky-2 { top: 230px;  left: 14%; width: 18px; height: 18px; }
+.bird--sky-3 { top: 140px;  right: 14%; transform: scaleX(-1); }
+.bird--sky-4 { top: 1060px; left: 48%; width: 22px; height: 22px; }
+
+/* над землёй */
+.bird--ground-1 { bottom: 150px; left: 4%; }
+.bird--ground-2 { bottom: 110px; left: 22%; transform: scaleX(-1); width: 20px; height: 20px; }
+.bird--ground-3 { bottom: 140px; left: 50%; width: 22px; height: 22px; }
+.bird--ground-4 { bottom: 120px; right: 9%; transform: scaleX(-1); }
+
+/* =========================================================
+   ПОДВАЛ — под землёй
+   ========================================================= */
+.footer {
+  position: relative;
+  overflow: hidden;
+  color: var(--cream);
+  background: linear-gradient(
+    to bottom,
+    var(--soil) 0%,
+    var(--soil) 40%,
+    #684629 40%,
+    #684629 72%,
+    var(--soil-dark) 72%
+  );
+}
+
+.footer__roots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+}
+
+.footer__inner {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 150px;
+}
+
+.panorama {
+  border-color: var(--sand);
+  border-radius: 28px;
+}
+
+.panorama__inner {
+  border-color: var(--green);
+}
+
+.panorama__image {
+  aspect-ratio: 1320 / 200;
+  border-color: var(--ice);
+}
+
+.footer__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 56px;
+}
+
+.footer__col--contacts {
+  padding-left: 60px;
+  border-left: 2px solid rgba(245, 243, 238, 0.3);
+}
+
+.footer__heading {
+  margin-bottom: 22px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.footer__heading--sand  { color: var(--sand); }
+.footer__heading--green { color: var(--green); }
+
+.footer__muted {
+  font-size: 18px;
+  color: #D9C7AE;
+}
+
+.footer__name {
+  margin: 10px 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  row-gap: 14px;
+  font-size: 18px;
+}
+
+.contacts dt {
+  font-weight: 700;
+}
+
+.contacts dd {
+  border-bottom: 1.5px dashed rgba(245, 243, 238, 0.5);
+}
+
+.footer__stones {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+}
+
+/* =========================================================
+   АДАПТИВ — телефон
+   ========================================================= */
+@media (max-width: 700px) {
+  .header__inner { height: 68px; }
+  .nav { display: none; }
+  .logo__icon { width: 40px; height: 40px; }
+  .logo__text { font-size: 18px; }
+  .button { padding: 10px 18px; font-size: 14px; }
+
+  .hero { padding: 130px 0 50px; }
+  .hero__over { font-size: 12px; }
+  .hero__title { font-size: 44px; margin: 14px 0; }
+  .hero__subtitle { font-size: 17px; }
+
+  .biomes { padding-bottom: 70px; }
+  .biomes__grid { grid-template-columns: 1fr; gap: 26px; }
+  .biome-card__window { height: 230px; }
+  .biome-card__name { font-size: 28px; left: 20px; bottom: 20px; }
+  .biome-card__animals { font-size: 16px; }
+
+  .about { padding-bottom: 70px; }
+  .about__inner { grid-template-columns: 1fr; gap: 36px; }
+  .section-title { font-size: 34px; }
+  .tricolor__part { width: 80px; }
+  .about__paragraph { font-size: 16px; }
+  .legend { flex-wrap: wrap; gap: 14px 22px; }
+  .collage__item { width: calc((100vw - 80px) / 3); height: calc((100vw - 80px) / 3); }
+
+  .shop { padding-bottom: 120px; }
+  .shop__grid { grid-template-columns: 1fr; gap: 36px; padding: 0 20px; }
+  .product__tile { height: 260px; }
+
+  .footer__inner { padding-top: 60px; padding-bottom: 110px; }
+  .panorama__image { aspect-ratio: 2.4 / 1; }
+  .footer__columns { grid-template-columns: 1fr; gap: 34px; margin-top: 36px; }
+  .footer__col--contacts { padding-left: 0; border-left: 0; }
+}

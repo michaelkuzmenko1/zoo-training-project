@@ -1,11 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZOO-TRAINING — мастер-классы по дрессировке</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
+  <!-- ============ ШАПКА ============ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <div class="logo__icon vector" data-vector="тукан-логотип"></div>
+        <span class="logo__text">ZOO-TRAINING</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#biomes" class="nav__link">Мастер-классы</a>
+        <a href="#about" class="nav__link">О зоопарке</a>
+        <a href="#shop" class="nav__link">Магазин</a>
+        <a href="#contacts" class="nav__link">Контакты</a>
+      </nav>
+
+      <a href="#" class="button">Записаться</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- птицы в небе (декор, позиции задаются в CSS) -->
+    <div class="bird bird--sky-1 vector" data-vector="птица"></div>
+    <div class="bird bird--sky-2 vector" data-vector="птица"></div>
+    <div class="bird bird--sky-3 vector" data-vector="птица"></div>
+    <div class="bird bird--sky-4 vector" data-vector="птица"></div>
+
+    <!-- ============ ПРИВЕТСТВИЕ ============ -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero__over">Мастер-классы по дрессировке</p>
+        <h1 class="hero__title">Встречайте мастеров</h1>
+        <p class="hero__subtitle">Лучшие дрессировщики мира — и самые редкие животные планеты</p>
+      </div>
+    </section>
+
+    <!-- ============ БИОМЫ ============ -->
+    <section class="biomes" id="biomes">
+      <div class="container biomes__grid">
+        <a href="#" class="biome-card">
+          <div class="biome-card__window biome-card__window--safari">
+            <div class="biome-card__image" data-image="пейзаж сафари"></div>
+            <h2 class="biome-card__name">Сафари</h2>
+          </div>
+          <p class="biome-card__animals">Кого встретите: жираф, лев, зебра, слон</p>
+        </a>
+
+        <a href="#" class="biome-card">
+          <div class="biome-card__window biome-card__window--jungle">
+            <div class="biome-card__image" data-image="пейзаж джунглей"></div>
+            <h2 class="biome-card__name">Джунгли</h2>
+          </div>
+          <p class="biome-card__animals">Кого встретите: тукан, ленивец, ягуар, попугай</p>
+        </a>
+
+        <a href="#" class="biome-card">
+          <div class="biome-card__window biome-card__window--winter">
+            <div class="biome-card__image" data-image="пейзаж зимы"></div>
+            <h2 class="biome-card__name">Зима</h2>
+          </div>
+          <p class="biome-card__animals">Кого встретите: белый медведь, пингвин, снежный барс, волк</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ О ЗООПАРКЕ ============ -->
+    <section class="about" id="about">
+      <div class="container about__inner">
+        <div class="about__text">
+          <h2 class="section-title">О зоопарке</h2>
+          <div class="tricolor">
+            <span class="tricolor__part tricolor__part--safari"></span>
+            <span class="tricolor__part tricolor__part--jungle"></span>
+            <span class="tricolor__part tricolor__part--winter"></span>
+          </div>
+
+          <p class="about__paragraph">
+            ZOO-TRAINING открылся в 2038 году. Инновационные авторские климатические
+            технологии позволяют на одной территории воссоздать три мира: жаркую саванну,
+            влажные тропические джунгли и вечную мерзлоту.
+          </p>
+          <p class="about__paragraph">
+            Каждый биом живёт по своим правилам — со своим климатом, растениями и обитателями.
+            А лучшие дрессировщики покажут, как найти общий язык с каждым из них.
+          </p>
+
+          <ul class="legend">
+            <li class="legend__item"><span class="legend__dot legend__dot--safari"></span>Сафари</li>
+            <li class="legend__item"><span class="legend__dot legend__dot--jungle"></span>Джунгли</li>
+            <li class="legend__item"><span class="legend__dot legend__dot--winter"></span>Вечная мерзлота</li>
+          </ul>
+
+          <div class="collage">
+            <div class="collage__item collage__item--safari" data-image="фото 1"></div>
+            <div class="collage__item collage__item--jungle" data-image="фото 2"></div>
+            <div class="collage__item collage__item--winter" data-image="фото 3"></div>
+          </div>
+        </div>
+
+        <div class="map-frame">
+          <div class="map-frame__inner">
+            <div class="map-frame__map" data-image="карта зоопарка"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ МАГАЗИН ============ -->
+    <section class="shop" id="shop">
+      <div class="container">
+        <h2 class="section-title section-title--center">Магазин зоопарка</h2>
+        <p class="shop__subtitle">Мерч ZOO-TRAINING</p>
+
+        <div class="shop__grid">
+          <a href="#" class="product">
+            <div class="product__tile product__tile--safari">
+              <div class="product__image" data-image="худи"></div>
+            </div>
+            <h3 class="product__name">Одежда</h3>
+            <p class="product__desc">худи и футболки</p>
+          </a>
+
+          <a href="#" class="product">
+            <div class="product__tile product__tile--jungle">
+              <div class="product__image" data-image="рюкзаки"></div>
+            </div>
+            <h3 class="product__name">Сумки</h3>
+            <p class="product__desc">рюкзаки</p>
+          </a>
+
+          <a href="#" class="product">
+            <div class="product__tile product__tile--winter">
+              <div class="product__image" data-image="мягкие игрушки"></div>
+            </div>
+            <h3 class="product__name">Игрушки</h3>
+            <p class="product__desc">мягкие игрушки</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ЗЕМЛЯ: деревья, животные, птицы, трава ============ -->
+    <div class="ground-line">
+      <div class="tree tree--1 vector" data-vector="дерево"></div>
+      <div class="tree tree--2 vector" data-vector="дерево"></div>
+      <div class="tree tree--3 vector" data-vector="дерево"></div>
+      <div class="tree tree--4 vector" data-vector="дерево"></div>
+      <div class="tree tree--5 vector" data-vector="дерево"></div>
+
+      <div class="animal animal--lion vector" data-vector="лев"></div>
+      <div class="animal animal--tiger vector" data-vector="тигр"></div>
+      <div class="animal animal--giraffe vector" data-vector="жираф"></div>
+
+      <div class="bird bird--ground-1 vector" data-vector="птица"></div>
+      <div class="bird bird--ground-2 vector" data-vector="птица"></div>
+      <div class="bird bird--ground-3 vector" data-vector="птица"></div>
+      <div class="bird bird--ground-4 vector" data-vector="птица"></div>
+
+      <div class="grass vector" data-vector="полоса травы"></div>
+    </div>
+  </main>
+
+  <!-- ============ ПОДВАЛ (под землёй) ============ -->
+  <footer class="footer" id="contacts">
+    <div class="footer__roots vector" data-vector="корни"></div>
+
+    <div class="container footer__inner">
+      <div class="panorama">
+        <div class="panorama__inner">
+          <div class="panorama__image" data-image="панорама зоопарка"></div>
+        </div>
+      </div>
+
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__heading footer__heading--sand">Информация об авторах</h4>
+          <p class="footer__muted">Студент НИУ ВШЭ</p>
+          <p class="footer__name">Кузьменко Михаил</p>
+          <p class="footer__muted">БРИЦП 262</p>
+        </div>
+
+        <div class="footer__col footer__col--contacts">
+          <h4 class="footer__heading footer__heading--green">Контакты</h4>
+          <dl class="contacts">
+            <dt>Телефон:</dt>   <dd><a href="#"></a></dd>
+            <dt>Telegram:</dt>  <dd><a href="#"></a></dd>
+            <dt>Портфолио:</dt> <dd><a href="#"></a></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__stones vector" data-vector="каменный слой"></div>
+  </footer>
+
 </body>
 </html>
