@@ -1,0 +1,58 @@
+/* страница 404 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  color: #F5F3EE;
+  background: #1E1E1E url("../assets/images/404.jpg") center / cover no-repeat;
+}
+
+.error {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(20, 20, 20, 0.45);
+}
+
+.error_code {
+  font-size: clamp(110px, 22vw, 260px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.error_text {
+  font-size: clamp(18px, 2vw, 26px);
+}
+
+.error_button {
+  margin-top: 12px;
+  padding: 16px 34px;
+  border-radius: 30px;
+  background: #F5F3EE;
+  color: #1E1E1E;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.error_button:hover {
+  transform: translateY(-2px);
+}
