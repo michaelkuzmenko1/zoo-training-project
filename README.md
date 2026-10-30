@@ -50,8 +50,3 @@ Claude объяснил несколько моментов, которые бы
 
 ### README
 Этот README тоже оформлен с помощью Claude. Я совсем забыл, что использование ИИ нужно указать в описании проекта, и он помог собрать этот раздел за короткое время.
-
-## Ссылки
-
-- Репозиторий: [michaelkuzmenko1/zoo-training-project](https://github.com/michaelkuzmenko1/zoo-training-project)
-- Telegram: [@itstase](https://t.me/itstase)
